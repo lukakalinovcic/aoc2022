@@ -52,9 +52,11 @@ fn part2(lines: &Vec<String>) -> i32 {
 }
 
 pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
-  (Some(part1(lines).to_string()), Some(part2(lines).to_string()))
+  (
+    Some(part1(lines).to_string()),
+    Some(part2(lines).to_string()),
+  )
 }
 
 extern crate macros;
 macros::make_test!(day04, 2, 4);
-

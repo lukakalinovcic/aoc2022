@@ -58,7 +58,10 @@ fn solve(lines: &Vec<String>, part1: bool) -> String {
 }
 
 pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
-  (Some(solve(&lines, true).to_string()), Some(solve(&lines, false).to_string()))
+  (
+    Some(solve(&lines, true).to_string()),
+    Some(solve(&lines, false).to_string()),
+  )
 }
 
 extern crate macros;

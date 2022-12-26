@@ -13,7 +13,10 @@ pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
   sums.push(sum);
   sums.sort();
   sums.reverse();
-  (Some(sums[0].to_string()), Some((sums[0] + sums[1] + sums[2]).to_string()))
+  (
+    Some(sums[0].to_string()),
+    Some((sums[0] + sums[1] + sums[2]).to_string()),
+  )
 }
 
 extern crate macros;
