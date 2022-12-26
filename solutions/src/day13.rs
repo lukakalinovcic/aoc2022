@@ -62,7 +62,7 @@ impl Node {
         }
       }
     }
-    panic!("unreachable")
+    panic!("unreachable");
   }
 }
 
