@@ -7,3 +7,5 @@ edition = "2021"
 
 [dependencies]
 macros = { path = "../macros" }
+substring = "1.4.5"
+arr_macro = "0.1.3"

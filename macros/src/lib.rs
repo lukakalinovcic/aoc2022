@@ -6,6 +6,7 @@ use quote::{quote, ToTokens, TokenStreamExt};
 pub fn register_solutions(input: TokenStream) -> TokenStream {
   let n: usize = input.to_string().parse().unwrap();
   let mut code = String::new();
+  code.push_str(format!("pub const SOLUTIONS: usize = {n};\n").as_str());
   for i in 1..=n {
     code.push_str(format!("pub mod day{:02};\n", i).as_str());
   }
