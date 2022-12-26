@@ -1,6 +1,6 @@
 extern crate macros;
 
-macros::register_solutions!(12);
+macros::register_solutions!(13);
 
 fn read_lines(day: usize) -> Vec<String> {
   use std::fs::File;
