@@ -42,7 +42,7 @@ enum Node {
 
 impl Node {
   fn new(tokens: Vec<Token>) -> Box<Node> {
-    let mut stack: Vec<Vec<Box<Node>>> = vec![Vec::new()];
+    let mut stack: Vec<Vec<Box<Node>>> = vec![];
 
     for tok in tokens {
       match tok {
@@ -53,12 +53,16 @@ impl Node {
         Token::ListOpen => stack.push(Vec::new()),
         Token::ListClose => {
           let children = stack.pop().unwrap();
+          let node = Box::new(Node::List(children));
+          if stack.is_empty() {
+            return node;
+          }
           let back = stack.len() - 1;
-          stack[back].push(Box::new(Node::List(children)));
+          stack[back].push(node);
         }
       }
     }
-    Box::new(Node::List(stack.pop().unwrap()))
+    Box::new(Node::Number(0))
   }
 }
 
@@ -161,10 +165,10 @@ fn solve2(lines: &Vec<String>) -> i32 {
   let mut i6 = -1;
   for (i, node) in nodes.iter().enumerate() {
     let node_str = format!("{}", node);
-    if node_str == "[[[2]]]" {
+    if node_str == "[[2]]" {
       i2 = (i + 1) as i32;
     }
-    if node_str == "[[[6]]]" {
+    if node_str == "[[6]]" {
       i6 = (i + 1) as i32;
     }
   }
