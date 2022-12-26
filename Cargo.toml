@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "macros",
+    "runner",
+    "solutions",
+]
