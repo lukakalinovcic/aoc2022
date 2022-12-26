@@ -37,12 +37,9 @@ fn part2(lines: &Vec<String>) -> i32 {
   sum
 }
 
-pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
-  (
-    Some(part1(lines).to_string()),
-    Some(part2(lines).to_string()),
-  )
+pub fn doit(lines: &Vec<String>) -> (String, String) {
+  (part1(lines).to_string(), part2(lines).to_string())
 }
 
 extern crate macros;
-macros::make_test!(day03, 157, 70);
+macros::tests!(day03, 157, 70;);

@@ -75,7 +75,7 @@ impl Dirs {
   }
 }
 
-pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
+pub fn doit(lines: &Vec<String>) -> (String, String) {
   let dirs = Dirs::new(&lines);
 
   let mut dir_sizes = Vec::<i64>::new();
@@ -96,8 +96,8 @@ pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
       result2 = *dir_size
     }
   }
-  (Some(result1.to_string()), Some(result2.to_string()))
+  (result1.to_string(), result2.to_string())
 }
 
 extern crate macros;
-macros::make_test!(day07, 95437, 24933642);
+macros::tests!(day07, 95437, 24933642;);

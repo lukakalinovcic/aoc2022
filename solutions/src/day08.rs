@@ -1,4 +1,4 @@
-pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
+pub fn doit(lines: &Vec<String>) -> (String, String) {
   let (rows, columns) = (lines.len() as i32, lines[0].len() as i32);
   let cell = |r, c| lines[r as usize].as_bytes()[c as usize];
   let is_inside = |r, c| r >= 0 && r < rows && c >= 0 && c < columns;
@@ -28,8 +28,8 @@ pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
       best_score = std::cmp::max(best_score, score);
     }
   }
-  (Some(num_visible.to_string()), Some(best_score.to_string()))
+  (num_visible.to_string(), best_score.to_string())
 }
 
 extern crate macros;
-macros::make_test!(day08, 21, 8);
+macros::tests!(day08, 21, 8;);

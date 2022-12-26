@@ -5,9 +5,9 @@ use clap::Parser;
 /// Simple binary to run Advent of code 2022 solutions.
 #[derive(Parser, Debug)]
 struct Args {
-   /// Days to run. Leave empty to run all days.
-   #[arg(short, long)]
-   days: Vec<usize>,
+  /// Days to run. Leave empty to run all days.
+  #[arg(short, long)]
+  days: Vec<usize>,
 }
 
 fn main() {
@@ -16,6 +16,7 @@ fn main() {
     days = (1..=solutions::SOLUTIONS).collect();
   }
   for day in days {
-    println!("Day {}: {:?}", day, solutions::run(day));
+    let (part1, part2) = solutions::run(day);
+    println!("Day #{day}  part1: {part1}  part2: {part2}");
   }
 }

@@ -57,12 +57,12 @@ fn solve(lines: &Vec<String>, part1: bool) -> String {
   ship.top()
 }
 
-pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
+pub fn doit(lines: &Vec<String>) -> (String, String) {
   (
-    Some(solve(&lines, true).to_string()),
-    Some(solve(&lines, false).to_string()),
+    solve(&lines, true).to_string(),
+    solve(&lines, false).to_string(),
   )
 }
 
 extern crate macros;
-macros::make_test!(day05, "CMZ", "MCD");
+macros::tests!(day05, "CMZ", "MCD";);

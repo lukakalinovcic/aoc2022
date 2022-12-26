@@ -1,6 +1,6 @@
 extern crate macros;
 
-macros::register_solutions!(8);
+macros::register_solutions!(9);
 
 fn read_lines(day: usize) -> Vec<String> {
   use std::fs::File;
@@ -13,6 +13,6 @@ fn read_lines(day: usize) -> Vec<String> {
     .collect()
 }
 
-pub fn run(day: usize) -> (Option<String>, Option<String>) {
+pub fn run(day: usize) -> (String, String) {
   REGISTRY[day - 1](&read_lines(day))
 }

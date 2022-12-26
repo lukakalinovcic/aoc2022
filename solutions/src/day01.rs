@@ -1,4 +1,4 @@
-pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
+pub fn doit(lines: &Vec<String>) -> (String, String) {
   let mut sums = Vec::new();
   let mut sum: i32 = 0;
   for s in lines {
@@ -14,10 +14,10 @@ pub fn doit(lines: &Vec<String>) -> (Option<String>, Option<String>) {
   sums.sort();
   sums.reverse();
   (
-    Some(sums[0].to_string()),
-    Some((sums[0] + sums[1] + sums[2]).to_string()),
+    sums[0].to_string(),
+    (sums[0] + sums[1] + sums[2]).to_string(),
   )
 }
 
 extern crate macros;
-macros::make_test!(day01, 24000, 45000);
+macros::tests!(day01, 24000, 45000;);
