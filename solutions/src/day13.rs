@@ -62,7 +62,7 @@ impl Node {
         }
       }
     }
-    Box::new(Node::Number(0))
+    panic!("unreachable")
   }
 }
 
