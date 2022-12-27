@@ -1,5 +1,7 @@
 extern crate solutions;
 
+use std::io::Write;
+
 use clap::Parser;
 
 /// Simple binary to run Advent of code 2022 solutions.
@@ -16,7 +18,14 @@ fn main() {
     days = (1..=solutions::SOLUTIONS).collect();
   }
   for day in days {
+    let start = std::time::Instant::now();
+
+    print!("Day #{day:02} ... ");
+    std::io::stdout().flush().unwrap();
+
     let (part1, part2) = solutions::run(day);
-    println!("Day #{day}  part1: {part1}  part2: {part2}");
+
+    let duration = start.elapsed().as_secs_f32();
+    println!("(done in {duration:.2}s) => {part1}, {part2}");
   }
 }
