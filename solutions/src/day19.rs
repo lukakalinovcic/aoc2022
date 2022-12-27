@@ -144,10 +144,9 @@ pub fn doit(lines: &Vec<String>) -> (String, String) {
     part1 += b.index * solve(b, 24, 1, 0, 0, 0, 0, 0, 0);
   }
   let mut part2 = 1;
-  let take = std::cmp::min(3, blueprints.len());
-  for b in &blueprints[0..take] {
-    let t = solve(b, 32, 1, 0, 0, 0, 0, 0, 0);
-    part2 *= t;
+  let keep = std::cmp::min(3, blueprints.len());
+  for b in &blueprints[0..keep] {
+    part2 *= solve(b, 32, 1, 0, 0, 0, 0, 0, 0);
   }
   (part1.to_string(), part2.to_string())
 }
