@@ -90,7 +90,7 @@ pub fn doit(lines: &Vec<String>) -> (String, String) {
   lines.push(("NOOP2".to_string(), 0, vec!["NOOP1".to_string()]));
 
   let mut ids = Ids::new();
-  for (name, flow, _) in lines.iter() {
+  for (name, _, _) in lines.iter() {
     let id = ids.len();
     ids.insert(name.clone(), id);
   }
