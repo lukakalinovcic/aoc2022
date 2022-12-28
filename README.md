@@ -38,3 +38,51 @@ Day #23 ... (done in 0.59s) => 3766, 954
 Day #24 ... (done in 0.09s) => 277, 877
 Day #25 ... (done in 0.00s) => 20=02=120-=-2110-0=1, Start the Blender
 ```
+
+Run selected days:  
+`~/aoc2022$ cargo run --release -- -d15 -d19 -d20`
+
+Output:
+```
+Day #15 ... (done in 1.97s) => 4748135, 13743542639657
+Day #19 ... (done in 2.03s) => 1528, 16926
+Day #20 ... (done in 0.57s) => 8372, 7865110481723
+```
+
+Run on problem examples:  
+`~/aoc2022$ cargo test`
+
+Output:
+```
+running 30 tests
+test day02::tests::day02 ... ok
+test day04::tests::day04 ... ok
+test day01::tests::day01 ... ok
+test day05::tests::day05 ... ok
+test day06::tests::day06_1 ... ok
+test day06::tests::day06_2 ... ok
+test day08::tests::day08 ... ok
+test day06::tests::day06_4 ... ok
+test day07::tests::day07 ... ok
+test day06::tests::day06_5 ... ok
+test day03::tests::day03 ... ok
+test day06::tests::day06_3 ... ok
+test day09::tests::day09_1 ... ok
+test day12::tests::day12 ... ok
+test day13::tests::day13 ... ok
+test day10::tests::day10 ... ok
+test day09::tests::day09_2 ... ok
+test day14::tests::day14 ... ok
+test day18::tests::day18 ... ok
+test day21::tests::day21 ... ok
+test day20::tests::day20 ... ok
+test day15::tests::day15 ... ok
+test day25::tests::day25 ... ok
+test day23::tests::day23 ... ok
+test day24::tests::day24 ... ok
+test day22::tests::day22 ... ok
+test day17::tests::day17 ... ok
+test day11::tests::day11 ... ok
+test day16::tests::day16 ... ok
+test day19::tests::day19 ... ok
+```
