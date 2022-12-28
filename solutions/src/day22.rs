@@ -214,7 +214,7 @@ fn walk(ctx: &Context, commands: &Vec<Command>) -> usize {
       Command::Fw(steps) => {
         for _ in 0..steps {
           let q = p.fw(ctx);
-          if q.is_open(&ctx) {
+          if q.is_open(ctx) {
             p = q;
           }
         }
